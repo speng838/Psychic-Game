@@ -1,0 +1,108 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href=assets/css/style.css>
+</head>
+<body>
+    
+    <h2>Guess what letter Im thinking of?</h2>
+    <h3>Wins:</h3>
+    <div id="win"></div>
+    <h3>Loses:</h3>
+    <div id="lose"></div>
+    <div id="testing"></div>
+    <div id="letter"></div>
+    <h3>Guesses Left:</h3>
+    <div id="key"></div>
+    <h3>Your guesses so far:</h3>
+    <div id="thatLetter"></div>
+
+    <script type = "text/javascript">
+    
+    
+
+        
+    
+        var wins = 0;
+        var loses = 0;
+        var wins2 = 0;
+        var loses2 = 0;
+
+    LetsSee();
+
+    function LetsSee(){
+   
+    var keyPressed = 10;
+    
+    
+    $(document).keypress(function(event){
+      var theLetter = String.fromCharCode(event.which);
+     // $("#letter").text(theLetter); 
+
+        keyPressed--;
+        
+
+        $("#key").text(keyPressed);
+
+
+    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var letter = alphabet[Math.floor(Math.random()*alphabet.length)];
+    //$("#testing").text(letter);
+    
+
+     //how many wins and loses
+    
+    
+    $("#thatLetter").append(" " + theLetter);
+
+               
+    if(theLetter === letter){
+        wins++;
+    }
+    else{
+            loses++; 
+        }
+    
+
+    if(keyPressed === 0 && wins>0){
+            wins2++;
+        $("#win").text(wins2);
+        keyPressed = 10;
+        wins =0;
+       
+        }
+        else if(keyPressed === 0 && wins===0){
+            loses2++;
+        $("#lose").text(loses2);
+        keyPressed =10;
+        wins = 0;
+        
+        }
+    
+    });
+
+  
+
+
+    
+   
+    }
+
+    
+
+   
+
+
+    
+
+    </script>
+
+</body>
+</html>
