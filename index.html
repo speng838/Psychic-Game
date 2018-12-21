@@ -60,8 +60,8 @@
      //how many wins and loses
     
     
+    //var testing = $("#thatLetter").append(" " + theLetter);
     $("#thatLetter").append(" " + theLetter);
-
                
     if(theLetter === letter){
         wins++;
@@ -76,13 +76,15 @@
         $("#win").text(wins2);
         keyPressed = 10;
         wins =0;
-       
+        $("#thatLetter").empty();
+        
         }
         else if(keyPressed === 0 && wins===0){
             loses2++;
         $("#lose").text(loses2);
         keyPressed =10;
         wins = 0;
+        $("#thatLetter").empty();
         
         }
     
