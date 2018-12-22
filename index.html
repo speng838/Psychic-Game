@@ -9,6 +9,7 @@
   <script src="main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href=assets/css/style.css>
+  <link rel="stylesheet" type="text/css" href = "assets/css/style.css">
 </head>
 <body>
     
@@ -25,10 +26,6 @@
     <div id="thatLetter"></div>
 
     <script type = "text/javascript">
-    
-    
-
-        
     
         var wins = 0;
         var loses = 0;
@@ -59,8 +56,6 @@
 
      //how many wins and loses
     
-    
-    //var testing = $("#thatLetter").append(" " + theLetter);
     $("#thatLetter").append(" " + theLetter);
                
     if(theLetter === letter){
@@ -68,16 +63,15 @@
     }
     else{
             loses++; 
-        }
+    }
     
 
-    if(keyPressed === 0 && wins>0){
+    if( wins === 1){
             wins2++;
         $("#win").text(wins2);
         keyPressed = 10;
         wins =0;
         $("#thatLetter").empty();
-        
         }
         else if(keyPressed === 0 && wins===0){
             loses2++;
@@ -89,20 +83,9 @@
         }
     
     });
-
-  
-
-
-    
+ 
    
     }
-
-    
-
-   
-
-
-    
 
     </script>
 
