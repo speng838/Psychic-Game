@@ -6,12 +6,11 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href=assets/css/style.css>
   <link rel="stylesheet" type="text/css" href = "assets/css/style.css">
 </head>
-<body>
+<body background = "assets/images/letters.jpg">
+        
     
     <h2>Guess what letter Im thinking of?</h2>
     <h3>Wins:</h3>
@@ -32,21 +31,15 @@
         var wins2 = 0;
         var loses2 = 0;
 
-    LetsSee();
-
-    function LetsSee(){
    
     var keyPressed = 10;
     
-    
+  
     $(document).keypress(function(event){
       var theLetter = String.fromCharCode(event.which);
      // $("#letter").text(theLetter); 
 
-        keyPressed--;
         
-
-        $("#key").text(keyPressed);
 
 
     var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -56,13 +49,33 @@
 
      //how many wins and loses
     
-    $("#thatLetter").append(" " + theLetter);
+   //$("#thatLetter").append(" " + theLetter);
+    
+   
+   var theLetterArray = [];
+   if (theLetterArray.includes(theLetter)){
+   
+    }
+   else{
+    
+    keyPressed--;
+    $("#key").text(keyPressed);
+    
+    theLetterArray.push(theLetter);
+    $("#thatLetter").append(theLetterArray + " ");
+    
+   }
+
+
+
+  
+    
                
     if(theLetter === letter){
         wins++;
     }
     else{
-            loses++; 
+        loses++; 
     }
     
 
@@ -72,20 +85,19 @@
         keyPressed = 10;
         wins =0;
         $("#thatLetter").empty();
+        thatLetterArray = [];
         }
-        else if(keyPressed === 0 && wins===0){
+    else if(keyPressed === 0 && wins===0){
             loses2++;
         $("#lose").text(loses2);
-        keyPressed =10;
+        keyPressed = 10;
         wins = 0;
         $("#thatLetter").empty();
-        
+        thatLetterArray = [];
         }
     
     });
  
-   
-    }
 
     </script>
 
